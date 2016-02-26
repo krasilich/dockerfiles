@@ -10,12 +10,8 @@ Prod images optimized for size and performance.
 - 7.0-dev
 - 7.0-prod
 
-## redis
+## Magento2
 
-Included consul for service discovery
+Based on PHP image.
 
-- 3.0
-
-## MySQL
-
-Included consul for service discovery
+- 2.0-dev

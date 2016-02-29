@@ -22,6 +22,8 @@ RUN apt-get update \
     && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/*
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN a2enmod rewrite && a2enmod headers
 
 COPY config/php.ini /usr/local/etc/php/
+COPY config/xdebug.ini /usr/local/etc/php/conf.d/
+RUN pecl install xdebug-beta
+RUN a2enmod rewrite && a2enmod headers

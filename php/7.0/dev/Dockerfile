@@ -1,7 +1,10 @@
 FROM php:7.0-apache
 
+MAINTAINER <Igor Krasilich igor.krasilich@gmail.com> 
+
 RUN apt-get update \
     && apt-get install -y \
+        git \
         libicu-dev \
         libjpeg-dev \
         libmcrypt-dev \
@@ -25,5 +28,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY config/php.ini /usr/local/etc/php/
 COPY config/xdebug.ini /usr/local/etc/php/conf.d/
-RUN pecl install xdebug-beta
+RUN pecl install xdebug
 RUN a2enmod rewrite && a2enmod headers

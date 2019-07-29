@@ -31,4 +31,3 @@ COPY config/xdebug.ini /usr/local/etc/php/conf.d/
 RUN pecl install -s xdebug
 RUN echo "zend_extension=$(php-config --extension-dir)/xdebug.so\n$(cat /usr/local/etc/php/conf.d/xdebug.ini)" > /usr/local/etc/php/conf.d/xdebug.ini
 RUN a2enmod rewrite && a2enmod headers
-RUN alias ll='ls -la'
